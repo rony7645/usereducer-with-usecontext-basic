@@ -1,14 +1,22 @@
 import React from "react";
 import { usePosts } from "../context/PostContext";
+import { useUsers } from "../context/UserContext";
 
 const Demo = () => {
-
-  const {postState} = usePosts()
+  const { postState } = usePosts();
+  const { userState, dispatch } = useUsers();
   console.log(postState);
-  
+  console.log(userState);
+
   return (
     <>
-      <h1>{postState.post}</h1>
+      <button
+        onClick={() =>
+          dispatch({ type: "CHECK_LOG", payload: "Clicked Check Log!" })
+        }
+      >
+        Check Log!
+      </button>
     </>
   );
 };

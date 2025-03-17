@@ -1,13 +1,13 @@
 import "./App.css";
 import Demo from "./components/Demo";
-import { PostProvider } from "./context/PostContext";
+import { Store } from "./Store";
 
 function App() {
   return (
     <>
-      <PostProvider>
+      <Store>
         <Demo />
-      </PostProvider>
+      </Store>
     </>
   );
 }
